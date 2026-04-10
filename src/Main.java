@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -76,7 +74,25 @@ public class Main {
         // More "Math Methods"
         // Math. <---
 
+        System.out.println(Math.max(2432, 5002));
+        System.out.println(Math.min(2432, 5002));
 
+        // How Division works
+        /*
+        It's just like a pack of skittles
+        If u wanna share with ur friends
+        But you all want the same amount
+        If there's like 20 skittles
+        And 4 of you
+        And you each want the same amount
+        You would give each person one until there aren't any
+        Then how many would each person have
+        4 people would get 5 skittles BC 5+5+5+5 = 20
+
+         */
+
+        int skittles = 20;
+        System.out.println(skittles / 4);
 
 
 
