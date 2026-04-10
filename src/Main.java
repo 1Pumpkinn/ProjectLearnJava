@@ -3,58 +3,48 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        /* ERRORS */
-        // Errors are normal in software / programming, They are normal and very good FEEDBACK!
+        /* ASSIGNMENT OPERATORS */
 
-        /* Compiler Errors (Syntax Errors) */
-        // Errors that are shown before you run the Program!
+        // Assignment =
+        int mana = 100;
+        System.out.println("Mana: " + mana);
 
-//        int x = 0.0; // Error: incompatible type
-//        int x = 0;   // Error x is already defined
+        // 1000 = mana; <-- no work because assignment operator
+        // is sided take right value and assign to left
 
-//        }} too many closing curly brackets!
-
-//        int z = 0 // Error: expected ;
-
+        // int x = 1000;
+        // mana = x;
 
 
-        /* Runtime errors (Exceptions) */
-//        Errors that happen during the Program!
+        // ADDITION +=
+        mana += 20; // mana = mana + 20; adding 20 to mana itself
+        System.out.println("Mana: " + mana);
 
-//        float y = 1 / 0; // Exception: Divide By Zero
-
-//        Exception: NullPointerException
-
-//        String text = null;
-//        System.out.println("Text is " + text); // <-- this does not error
-//        int length = text.length();
-//        System.out.println("The length of the text is " + length);
-//        this errors because the variable text is null (meaning it's nothing)
+        mana++; // mana = mana + 1; // This is also known as INCREMENTING
+        System.out.println("Mana: " + mana); // 121
 
 
-// Errors = Feedback fail = yummy = errors = something to fix = productivity
-// Errors = Feedback fail = yummy = errors = something to fix = productivity
-// Errors = Feedback fail = yummy = errors = something to fix = productivity
-// Errors = Feedback fail = yummy = errors = something to fix = productivity
-// Errors = Feedback fail = yummy = errors = something to fix = productivity
-// Errors = Feedback fail = yummy = errors = something to fix = productivity
+        // SUBTRACTION -=
+        mana--; // mana = mana - 1; // This is also known as DECREMENTING
+        System.out.println("Mana: " + mana); // 120
+        mana -= 60; // mana = mana - 60;
+        System.out.println("Mana: " + mana); // 60
 
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter anything that is not a number, that's gonna throw an error");
-        int number = scanner.nextInt();
-        System.out.println("You just typed " + number);
+        // MULTIPLY *=
+        mana *= 2;
+        System.out.println("Mana: " + mana);
 
 
+        // DIVISION /=
+        mana /= 4;
+        System.out.println("Mana: " + mana);
 
-        // This is a StackTrace pretty much finds the error where it is located
 
-//        Exception in thread "main" java.util.InputMismatchException
-//        at java.base/java.util.Scanner.throwFor(Scanner.java:977)
-//        at java.base/java.util.Scanner.next(Scanner.java:1632)
-//        at java.base/java.util.Scanner.nextInt(Scanner.java:2297)
-//        at java.base/java.util.Scanner.nextInt(Scanner.java:2251)
-//        at Main.main(Main.java:38)
+        // MODULO (REMAINDER) %=
+        mana %= 2;
+        System.out.println("Mana: " + mana);
+
 
     }
 }
