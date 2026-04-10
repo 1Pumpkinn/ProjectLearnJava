@@ -1,46 +1,38 @@
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        /* DATA TYPES & VARIABLES */
+       /* INPUT & OUTPUT */
 
-        // <-- comment
+        /* OUTPUT */
+        // You usually output Strings
 
-        /*
-        Multiline Comment
-         */
+        System.out.println("Hello World!");
+        System.out.println("Element Smp 💥🔫");
 
-        /* Variables */
+        // Values
+        int health = 42;
+        System.out.println(health);
 
-        // datatype name_of_variable // Declaration
-        // OR
-        // datatype name_of_variable = value_of_variable;
-        // Initialization (Declaration + Assignment of Value)
+        // Values with Strings
+        int grade = 85;
+        System.out.println("Your grade is: " + grade);
 
-        /* DATA TYPES */
+        /* INPUT */
+        // we make a variable data type of Scanner
+        // this allows us to read something in
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt(); // HAS TO BE A NUMBER
+        System.out.println("You just typed " + number);
+        // outputs number what is the users value that they input into the console.
 
-        // Integers (Store whole numbers including negative numbers)
-        // Ints go from -2147483648 to 2147483647
-        int points;
-        points = 100;
-        int x = -69;
+        String input = scanner.next(); // gets everything up until the next space.
+        System.out.println("You just typed (String) " + input);
 
-        // Floating Point Numbers (float & double)
-        float pi = 3.14159265F;
-        double e = 2.71828128;
 
-        float accountValue = 20.20f; // has precision errors GOOD FOR MINECRAFT YUMMY YUMM ! :D
 
-        // For real numbers, Precision can be an issue
-        // Scientific notation: 314159265 * 10^-8
 
-        // Booleans (True or False)
-        boolean pumpkinIsAPumpkin = true;
-        boolean pumpkinIsStraight = false;
-
-        // Chars & Strings
-        char grade = 'B';
-        String name = "PumpkinDev";
 
     }
 }
