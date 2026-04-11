@@ -6,45 +6,34 @@ public class Main {
         // "Everything is just an if statement"
         // To "Control The Flow of the program, not just line by line!
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("How much health do you have?");
-        int health = scanner.nextInt();
-        boolean isAlive = health > 0;
+       Scanner scanner = new Scanner(System.in);
+       int mana = scanner.nextInt();
 
-        if(isAlive) {
-            System.out.println("You are still alive with " + health + " hp"); // only calls this when (true)
+       if(mana >= 75) {
+           System.out.println("You can use any Ability");
+       } else if(mana > 50) {
+           System.out.println("You can use Ability 1");
         } else {
-            System.out.println("You are ermmm dead!"); // calls when only false
-        }
+           System.out.println("You cannot perform a Ability");
+       }
 
-        System.out.println("How many points did you have in the Exam?");
-        int points = scanner.nextInt();
+        System.out.println("Choose a number from 0 to 10");
+       int number = scanner.nextInt();
 
-        if(points >= 100) {
-            System.out.println("Ez Passing 🤓");
-        } else if(points >= 50) {
-            System.out.println("You passed");
-        } else {
-            System.out.println("You failed gulp...");
-        }
-
-        /* SWITCH STATEMENT */
-        // for explicit action for cases
-
-        System.out.println("Give me a number from 0 and 5...");
-        int studentId = scanner.nextInt();
-        switch(studentId) {
-            case 0: System.out.println("Student Bob has Id 0"); break;
-            case 1: System.out.println("Student Meow has Id 1"); break;
-            case 2: System.out.println("Student EEE has Id 2"); break;
-            case 3: System.out.println("Student BBB has Id 3"); break;
-            case 4: System.out.println("Student TTT has Id 4"); break;
-            case 5: System.out.println("Student PPP has Id 5"); break;
-
-            default: System.out.println("Number does not exist in the Program erm IDIOT learn numbers."); break;
-        }
-
-
+       switch(number) {
+           case 0: System.out.println("The correct number was 0"); break;
+           case 1: System.out.println("The correct number was 1"); break;
+           case 2: System.out.println("The correct number was 2"); break;
+           case 3: System.out.println("The correct number was 3"); break;
+           case 4: System.out.println("The correct number was 4"); break;
+           case 5: System.out.println("The correct number was 5"); break;
+           case 6: System.out.println("The correct number was 6"); break;
+           case 7: System.out.println("The correct number was 7"); break;
+           case 8: System.out.println("The correct number was 8"); break;
+           case 9: System.out.println("The correct number was 9"); break;
+           case 10: System.out.println("The correct number was 10"); break;
+           default: System.out.println("ERROR: You exceeded the Number Limit!");
+       }
 
 
     }
