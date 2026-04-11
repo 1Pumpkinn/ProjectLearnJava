@@ -1,105 +1,48 @@
-import javax.naming.NamingEnumeration;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+    /* CONTROL FLOW (IF & SWITCH) */
+        // "Everything is just an if statement"
+        // To "Control The Flow of the program, not just line by line!
 
-        /* BOOLEANS AND LOGIC */
-
-        // Booleans are either true or false
-        boolean saturnIsAGoodDeveloper = true;
-        boolean saturnIsAdminAbuser = false;
-
-        System.out.println("Is Saturn a good Developer ? " + saturnIsAGoodDeveloper);
-        System.out.println("Is Saturn a Admin Abuser ? " + saturnIsAdminAbuser);
-
-        boolean isCreative = false;
-        System.out.println("Player is in Creative Mode: " + isCreative);
-
-
-        /* COMPARISON
-        (  <  <=  >=  > ==  !=  )*/
-        int points = 82;
-        int pointsForPassing = 55;
-
-        boolean hasPassedTest = points >= pointsForPassing;
-        System.out.println("Has Passed Test: " + hasPassedTest);
-
-        int health = 10;
-        boolean isAlive = health > 0;
-        System.out.println("Player is still Alive: " + isAlive); // Health = 1 TRUE, Health = 0 FALSE
-
-        // VARIABLE/VALUE comparison ==> VARIABLE/VALUE ==> BOOLEAN
-        // int + int ==> int
-
-        // BEWARE of STRINGS
         Scanner scanner = new Scanner(System.in);
-        String name = scanner.next();
+        System.out.println("How much health do you have?");
+        int health = scanner.nextInt();
+        boolean isAlive = health > 0;
 
-         // boolean isSaturn = name == "Saturn"; // .equals for Strings
-        boolean isSaturn = name.equals("Saturn"); // <-- name.equals()
-        System.out.println("Is your name Saturn? " + isSaturn);
+        if(isAlive) {
+            System.out.println("You are still alive with " + health + " hp"); // only calls this when (true)
+        } else {
+            System.out.println("You are ermmm dead!"); // calls when only false
+        }
 
-        /* LOGIC */
-        // "addition and "subtraction" for Booleans
+        System.out.println("How many points did you have in the Exam?");
+        int points = scanner.nextInt();
 
-        // (BOOLEAN logicOperator BOOLEAN) ==> BOOLEAN
+        if(points >= 100) {
+            System.out.println("Ez Passing 🤓");
+        } else if(points >= 50) {
+            System.out.println("You passed");
+        } else {
+            System.out.println("You failed gulp...");
+        }
 
-        // OR || ==> (a || b) // 1 is true, 0 is false
-        // a | b | c
-        // 0 | 0 | 0
-        // 1 | 0 | 1
-        // 0 | 1 | 1
-        // 1 | 1 | 1
+        /* SWITCH STATEMENT */
+        // for explicit action for cases
 
-        // AND && ==> (a && b)
-        // a | b | c
-        // 0 | 0 | 0
-        // 1 | 0 | 0
-        // 0 | 1 | 0
-        // 1 | 1 | 1
+        System.out.println("Give me a number from 0 and 5...");
+        int studentId = scanner.nextInt();
+        switch(studentId) {
+            case 0: System.out.println("Student Bob has Id 0"); break;
+            case 1: System.out.println("Student Meow has Id 1"); break;
+            case 2: System.out.println("Student EEE has Id 2"); break;
+            case 3: System.out.println("Student BBB has Id 3"); break;
+            case 4: System.out.println("Student TTT has Id 4"); break;
+            case 5: System.out.println("Student PPP has Id 5"); break;
 
-        // NOT !
-        // a | !a
-        // 0 |  1
-        // 1 |  0
-
-
-        boolean passTest1 = true;
-        boolean passTest2 = true;
-        boolean hasHonors = passTest1 && passTest2;
-
-        // Mining example
-        boolean hasPickaxe = true;
-        int durability = 5;
-        int neededDurability = 9;
-
-        boolean canMine3x3Area = (hasPickaxe && (durability >= neededDurability)) || isCreative;
-
-        /* DRINKING AGE EXAMPLE (*/
-        System.out.println("What is your age?");
-        int age = scanner.nextInt();
-        System.out.println("Put in or true or false, you are from Europe?");
-        boolean isEuropean = scanner.nextBoolean();
-
-
-//        boolean canPersonDrinkAlcohol = (isEuropean && age >= euDrinkingAge) || !isEuropean && age >= usDrinkingAge;
-//        System.out.println("Can you drink? " + canPersonDrinkAlcohol);
-
-        // Breaking It Down
-
-        int euDrinkingAge = 18;
-        int usDrinkingAge = 21;
-
-        boolean isAmerican = !isEuropean;
-        boolean couldDrinkInEU = age >= euDrinkingAge;
-        boolean couldDrinkInUS = age >= usDrinkingAge;
-
-
-        boolean canPersonDrinkAlcohol = isEuropean && couldDrinkInEU || isAmerican && couldDrinkInUS;
-        System.out.println("Can you drink? " + canPersonDrinkAlcohol);
-
+            default: System.out.println("Number does not exist in the Program erm IDIOT learn numbers."); break;
+        }
 
 
 
