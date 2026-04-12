@@ -2,89 +2,69 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* STRING & STRING METHODS */
 
-        String name = "Kaupenjoe";
-        String occupation = "YouTube";
-        occupation += "r";
 
-        System.out.println("My name is " + name + " and I am a " + occupation);
+        // Use cases for operation operator +, - * /
+        // or If statements if easier
+        // Try clean code instead of messy
 
-        String sentence = "Hello, how are you doing? Hello";
-        System.out.println(sentence);
-
-        // Upper Case & Lower Case
-        System.out.println("Lower Case: " + sentence.toLowerCase());
-        System.out.println("Upper Case: " + sentence.toUpperCase());
-
-        // Contain
-        System.out.println("Does it contain \"hello\": " + sentence.contains("hello"));
-
-        // Replacing
-        System.out.println(sentence.replace("Hello", "Howdy, Howdy"));
-
-        // charAt --> Programmers start count at 0
-        System.out.println(sentence.charAt(8));
-
-        // Sentence is not modified!
-        System.out.println(sentence);
-
-        System.out.println("---------------");
-
-        // Think back String Comparisons!
-        System.out.println("What is your name?");
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
+        System.out.println("Input the Math Operator +, -, *, /");
+        String operator = scanner.next();
+        System.out.println("Input the first number");
+        int num1 = scanner.nextInt();
+        System.out.println("Input the second number");
+        int num2 = scanner.nextInt();
 
-        if(input == "Kaupenjoe") {
-            System.out.println("Yep, it's Kaupenjoe with ==");
-        } else {
-            System.out.println("Nope, it's not Kaupenjoe with ==");
+        switch(operator) {
+            case "+": System.out.println(num1 + num2); break;
+            case "-": System.out.println(num1 - num2); break;
+            case "*": System.out.println(num1 * num2); break;
+            case "/": System.out.println(num1 / num2); break;
+
+            default: System.out.println("Math operator either does not exist or you did not input numbers correctly"); break;
         }
 
-        if(input.equals("Kaupenjoe")) {
-            System.out.println("Yep, it's Kaupenjoe with equals");
-        } else {
-            System.out.println("Nope, it's not Kaupenjoe with equals");
+
+
+        int min = 1;
+        int max = 3;
+        String pickaxe = "Pickaxe";
+        String sword = "Sword";
+        String shovel = "Shovel";
+
+        int randomBlock = (int) (Math.random() * (max - min + 1)) + min;
+        System.out.println(randomBlock);
+
+        switch (randomBlock) {
+            case 1: System.out.println("Stone Block has appeared"); break;
+            case 2: System.out.println("Clay Block has appeared"); break;
+            case 3: System.out.println("Cobwebs has appeared"); break;
         }
 
-        System.out.println("---------------");
 
-        /* Note on Scanners and Strings! */
-        System.out.println("What is your Full Name?");
-        input = scanner.next(); // Using Next will not work!
 
-        if(input == "Joe Kaupenjoe") { // You name is Joe Kaupenjoe? L O L!
-            System.out.println("Yep, it's Joe Kaupenjoe with ==");
-        } else {
-            System.out.println("Nope, it's not Joe Kaupenjoe with ==");
-        }
 
-        if(input.equals("Joe Kaupenjoe")) {
-            System.out.println("Yep, it's Joe Kaupenjoe with equals");
-        } else {
-            System.out.println("Nope, it's not Joe Kaupenjoe with equals");
-        }
+        /* EXERCISE 1b: Basic Resource Miner Game
+         * Create a Basic "Resource Miner" Game. This is of course open to interpretation.
+         *
+         * The Basic idea is as follows: Via a random number generated, the "player" has one of (at least) three "blocks"
+         * in front of them. Let's call them Clay, Stone, Cobweb as examples. The player must then decide which tool to use
+         * Sword, Shovel, Pickaxe. Is the correct tool chosen then the player moves onto the next randomly selected block.
+         * They should mine three blocks and then the game outputs the score on how many they mined correctly!
+         *
+         * When the player types in their tool, make sure to do a small amount of error correction. Make sure that both
+         * lower and uppercase for the tool names are basically ignored! (Lesson: String Methods)
+         *
+         * For ease of use this, generates a number between 1 and 3, feel free to use it:
+         * int min = 1;
+         * int max = 3;
+         * int randomBlock = (int) (Math.random() * (max - min + 1)) + min;
+         *
+         * Estimated Time ~60+ minutes
+         *
+         */
 
-        // This doesn't work, because scanner.next() "stops" reading when it sees a space character!
-        // We need to use scanner.nextLine(), BUT in order to do this,
-        // the remaining input must be "cleared" by calling scanner.nextLine() again!
-        System.out.println("---------------");
-        scanner.nextLine();
 
-        System.out.println("What is your Full Name?");
-        input = scanner.nextLine(); // Using Next will not work!
-
-        if(input == "Joe Kaupenjoe") { // You name is Joe Kaupenjoe? L O L!
-            System.out.println("Yep, it's Joe Kaupenjoe with ==");
-        } else {
-            System.out.println("Nope, it's not Joe Kaupenjoe with ==");
-        }
-
-        if(input.equals("Joe Kaupenjoe")) {
-            System.out.println("Yep, it's Joe Kaupenjoe with equals");
-        } else {
-            System.out.println("Nope, it's not Joe Kaupenjoe with equals");
-        }
     }
 }
