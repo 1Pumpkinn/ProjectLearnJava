@@ -2,39 +2,89 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-    /* CONTROL FLOW (IF & SWITCH) */
-        // "Everything is just an if statement"
-        // To "Control The Flow of the program, not just line by line!
+        /* STRING & STRING METHODS */
 
-       Scanner scanner = new Scanner(System.in);
-       int mana = scanner.nextInt();
+        String name = "Kaupenjoe";
+        String occupation = "YouTube";
+        occupation += "r";
 
-       if(mana >= 75) {
-           System.out.println("You can use any Ability");
-       } else if(mana > 50) {
-           System.out.println("You can use Ability 1");
+        System.out.println("My name is " + name + " and I am a " + occupation);
+
+        String sentence = "Hello, how are you doing? Hello";
+        System.out.println(sentence);
+
+        // Upper Case & Lower Case
+        System.out.println("Lower Case: " + sentence.toLowerCase());
+        System.out.println("Upper Case: " + sentence.toUpperCase());
+
+        // Contain
+        System.out.println("Does it contain \"hello\": " + sentence.contains("hello"));
+
+        // Replacing
+        System.out.println(sentence.replace("Hello", "Howdy, Howdy"));
+
+        // charAt --> Programmers start count at 0
+        System.out.println(sentence.charAt(8));
+
+        // Sentence is not modified!
+        System.out.println(sentence);
+
+        System.out.println("---------------");
+
+        // Think back String Comparisons!
+        System.out.println("What is your name?");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.next();
+
+        if(input == "Kaupenjoe") {
+            System.out.println("Yep, it's Kaupenjoe with ==");
         } else {
-           System.out.println("You cannot perform a Ability");
-       }
+            System.out.println("Nope, it's not Kaupenjoe with ==");
+        }
 
-        System.out.println("Choose a number from 0 to 10");
-       int number = scanner.nextInt();
+        if(input.equals("Kaupenjoe")) {
+            System.out.println("Yep, it's Kaupenjoe with equals");
+        } else {
+            System.out.println("Nope, it's not Kaupenjoe with equals");
+        }
 
-       switch(number) {
-           case 0: System.out.println("The correct number was 0"); break;
-           case 1: System.out.println("The correct number was 1"); break;
-           case 2: System.out.println("The correct number was 2"); break;
-           case 3: System.out.println("The correct number was 3"); break;
-           case 4: System.out.println("The correct number was 4"); break;
-           case 5: System.out.println("The correct number was 5"); break;
-           case 6: System.out.println("The correct number was 6"); break;
-           case 7: System.out.println("The correct number was 7"); break;
-           case 8: System.out.println("The correct number was 8"); break;
-           case 9: System.out.println("The correct number was 9"); break;
-           case 10: System.out.println("The correct number was 10"); break;
-           default: System.out.println("ERROR: You exceeded the Number Limit!");
-       }
+        System.out.println("---------------");
 
+        /* Note on Scanners and Strings! */
+        System.out.println("What is your Full Name?");
+        input = scanner.next(); // Using Next will not work!
 
+        if(input == "Joe Kaupenjoe") { // You name is Joe Kaupenjoe? L O L!
+            System.out.println("Yep, it's Joe Kaupenjoe with ==");
+        } else {
+            System.out.println("Nope, it's not Joe Kaupenjoe with ==");
+        }
+
+        if(input.equals("Joe Kaupenjoe")) {
+            System.out.println("Yep, it's Joe Kaupenjoe with equals");
+        } else {
+            System.out.println("Nope, it's not Joe Kaupenjoe with equals");
+        }
+
+        // This doesn't work, because scanner.next() "stops" reading when it sees a space character!
+        // We need to use scanner.nextLine(), BUT in order to do this,
+        // the remaining input must be "cleared" by calling scanner.nextLine() again!
+        System.out.println("---------------");
+        scanner.nextLine();
+
+        System.out.println("What is your Full Name?");
+        input = scanner.nextLine(); // Using Next will not work!
+
+        if(input == "Joe Kaupenjoe") { // You name is Joe Kaupenjoe? L O L!
+            System.out.println("Yep, it's Joe Kaupenjoe with ==");
+        } else {
+            System.out.println("Nope, it's not Joe Kaupenjoe with ==");
+        }
+
+        if(input.equals("Joe Kaupenjoe")) {
+            System.out.println("Yep, it's Joe Kaupenjoe with equals");
+        } else {
+            System.out.println("Nope, it's not Joe Kaupenjoe with equals");
+        }
     }
 }
