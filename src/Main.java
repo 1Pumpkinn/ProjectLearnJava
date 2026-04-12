@@ -2,41 +2,35 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* TERNARY OPERATOR */
-        // A very "compact" way to do if-else
+        /* (BASIC) Casting */
+        // Turning one Data Type into another
 
-        int health = 0;
-        String status = "";
-        System.out.println("What is your Status? " + status);
+        int health = 10;
+        float damage = 1.5f;
 
-        if(health > 0) {
-            status = "Alive";
-        } else {
-            status = "Dead";
-        }
-        System.out.println("What is your Status? " + status);
-        status = "";
+        // int result = health - damage; // 10 - 1.5f = 8.5f
+        float resultFloat = health - damage; // this works because it's a float!
 
-        // TERNARY OPERATOR
-        // BOOLEAN ? TRUE_RETURN : FALSE_RETURN;
-        status = (health > 0) ? "Alive" : "Dead";
-        System.out.println("What is your Status? " + status);
+        System.out.println("Result: " + resultFloat); // 8.5f
 
-        int mana = 100;
-        boolean canUseAbility =
+        int resultInt = health - (int) damage; // explicit "Cast" damage from float to int
+        System.out.println("Result: " + resultInt);
 
-        canUseAbility = (mana >= 50) ? true : false;
-        System.out.println("Can Player use Ability 1: " + canUseAbility);
+        resultFloat = (float) health - damage;
+        System.out.println(resultFloat); // 10 -> 10.0
 
-        Scanner scanner = new Scanner(System.in);
-        int age = scanner.nextInt();
-        boolean canDrinkInNSW;
+        resultInt = (int) ((float) health - damage); // 8.5 to int --> 8
+        System.out.println(resultInt);
 
-        canDrinkInNSW = (age >= 18) ? true : false;
-        System.out.println("Can you drink in NSW Australia \"" +  canDrinkInNSW  + "\" Person is at the age of " + age);
+        // health at 10 and damage at 9.99 -> 9.99 -> 9 everything gets cut off from the decimal
 
+       // resultInt = (boolean) health; Not convertible
 
+        String points = "100";
+        String pi = "3.14159265";
 
+        int result = Integer.parseInt(points); // String to Integer
+        System.out.println("Result: " + result);
 
 
     }
