@@ -2,75 +2,54 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* LOOPS (FOR & WHILE */
-        // Doing things Multiple times (easily)
-        // Doing things Multiple times (easily)
+        /* ARRAYS */
+        // When you need multiple elements that are loopable
 
-        // Output all numbers from 0 to 99
-        System.out.println(0);
-        System.out.println(1);
-        System.out.println(2);
-        System.out.println(3);
-        System.out.println(4);
+        String question1 = "What does WWW stand for?";
+        String question2 = "What is the World's largest Ocean?";
+        String question3 = "Which Year did East and West Germany Unify?";
 
-        // Now output numbers between 1000 and 2000 and only leap years!
-        System.out.println(1000);
-        System.out.println(1004);
-        System.out.println(1008);
+        String answer1 = "World Wide Web";
+        String answer2 = "Pacific Ocean";
+        String answer3 = "1990";
 
-        /* FOR LOOP */
-        // for(Initialization; Condition; Update) if condition is false the loop stops
-        // Example 0 to 99
-        for(int i = 0; i < 100; i++) { // if "i" is smaller than 100 keep adding until you get to 99
+        // Add a fourth one...
+        // Add another 15
+        // Now loop through them
 
-            if(i == 56 || i == 57 || i == 58) {
-                continue;
-            }
-            System.out.println(i);
+        for (int i = 1; i < 4 ; i++) {
+            // System.out.println(questioni); // THIS DOES NOT WORK
         }
 
-        int countTo = 100;
-        for(int i = 0; i < countTo; i++) {
+        /* ARRAYS */
+        // Think of a "list" of Elements
+        // Programmers start to count at 0
+        String[] questions = new String[4];
+        questions[0] = "What does WWW stand for?";
+        questions[1] = "What is the World's largest Ocean?";
+        questions[2] = "Which Year did East and West Germany Unify?";
+        questions[3] = "What is the tallest mountain on Earth?";
 
-            System.out.println(i);
+        String[] answers = new String[4];
+        answers[0] = "World Wide Web";
+        answers[1] = "Pacific Ocean";
+        answers[2] = "1990";
+        answers[3] = "Mount Everest";
+
+        for (int i = 0; i < questions.length; i++) { // < 3 hard coded number instead change it to questions.length
+            System.out.println("Q: " + questions[i] + " | A: " + answers[i]);
         }
 
-        // Example: Leap years
-        for(int i = 1000; i <= 2000; i++) {
+        answers[0] = "World Wide Word";
 
-            if(i == 1980) {
-                break;
-            }
+        int[] numbers = new int[3];
+        numbers[0] = 4;
+        numbers[1] = 8;
+        numbers[2] = 15;
 
-            // If the year is divisible by 4 AND (it's NOT divisible by 100 OR it is divisible by 400)
-            if(i % 4 == 0 && (i % 100 != 0 || i % 400 == 0)) {
-                System.out.println(i);
-            }
-        }
-
-        /* WHILE LOOP */
-        int health = 10;
-        while (health > 0) { // Infinite loop
-            System.out.println("The Player is still Alive with " + health + " HP");
-            health--;
-        }
-
-        System.out.println("-------------");
-
-        // CAUTION for While Loops
-        // They can cause: INFINITE LOOPS!
-        health = 10;
-        while (health > 0) {
-            if(health == 6) {
-                continue; // skip the rest of the loop
-            }
-            if(health == 2) {
-                break; // exit and break out of the loop
-            }
-            System.out.println("The Player is still Alive with " + health + " HP");
-            health--;
-
-            }
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
         }
     }
+}
 
