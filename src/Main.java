@@ -28,6 +28,16 @@ public class Main {
         canUseAbility = (mana >= 50) ? true : false;
         System.out.println("Can Player use Ability 1: " + canUseAbility);
 
+        Scanner scanner = new Scanner(System.in);
+        int age = scanner.nextInt();
+        boolean canDrinkInNSW;
+
+        canDrinkInNSW = (age >= 18) ? true : false;
+        System.out.println("Can you drink in NSW Australia \"" +  canDrinkInNSW  + "\" Person is at the age of " + age);
+
+
+
+
 
     }
 }
