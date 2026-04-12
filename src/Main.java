@@ -32,6 +32,11 @@ public class Main {
         int result = Integer.parseInt(points); // String to Integer
         System.out.println("Result: " + result);
 
+        double resultPi = Double.parseDouble(pi);
+        System.out.println("Result Pi: " + resultPi);
+
+
+
 
     }
 }
