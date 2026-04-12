@@ -22,6 +22,12 @@ public class Main {
         status = (health > 0) ? "Alive" : "Dead";
         System.out.println("What is your Status? " + status);
 
+        int mana = 100;
+        boolean canUseAbility =
+
+        canUseAbility = (mana >= 50) ? true : false;
+        System.out.println("Can Player use Ability 1: " + canUseAbility);
+
 
     }
 }
