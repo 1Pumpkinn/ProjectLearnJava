@@ -50,6 +50,16 @@ public class Main {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
+
+        float[] floatNums = new float[3];
+        floatNums[0] = 5.5f;
+        floatNums[1] = 10.5f;
+        floatNums[2] = 15.5f;
+
+        for (int i = 0; i < floatNums.length; i++) {
+            System.out.println(floatNums[i]);
+        }
+
     }
 }
 
