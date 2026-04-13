@@ -2,99 +2,66 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* METHODS */
-        // When you need to redo things in different places
-        // predefine a certain "behaviour"/task and can repeat it
+        /* EXERCISE 2a: Easy Calculator (Now with Methods)
+         *
+         * Use the same Calculator, we've made in Exercise 1a and remake it with methods!
+         * In addition, make it so that the calculator asks if you'd like to continue, you can then say "y" if you do!
+         * Think how this "infinite" loop could be made! (Hint: Lesson Loops)
+         *
+         * Estimated Time: 30-45 minutes
+         *
+         */
 
-        // We can call a method
+
         test();
-        test();
-        test();
-
-        System.out.println("----------");
-
-        // method with parameters
-        outputSum(200, 100);
-        System.out.println("Calling the method: " + outputSum(63, 80));
-        int result = 1000 + outputSum(10, 10);
-
-        System.out.println("---------");
-
-        bakeCake();
-
-        System.out.println("-------------");
-
-        bakeCake();
 
 
     }
 
-    // For all our methods are: public static void
+
     public static void test() {
-        System.out.println("Test");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type in the operation (plus or +, minus or -, multiply or *, divide or /)");
+        String operation = scanner.next();
+
+        System.out.println("Type in your first number!");
+        int number1 = scanner.nextInt();
+        System.out.println("Type in your second number!");
+        int number2 = scanner.nextInt();
+
+
+        int result = 0;
+
+        switch (operation) {
+            case "plus", "+":
+                result = number1 + number2; wantToContunue();
+                break;
+            case "minus", "-":
+                result = number1 - number2; wantToContunue();
+                break;
+            case "multiply", "*":
+                result = number1 * number2; wantToContunue();
+                break;
+            case "divide", "/": wantToContunue();
+                result = number1 / number2; break;
+            default: wantToContunue(); break;
+
+        }
+        System.out.println("Your result it " + number1 + " " + operation + " " + number2 + " = " + result);
     }
 
-    // A method with parameters
-    // Method Signature: [public] [static] [return_type] method_name(parameter_type parameter_name)
-    // void means it does not return anything
-    public static int outputSum(int x, int y) {
-        System.out.println("The sum of " + x + " + " + y + " = " + (x+y));
-        return x + y;
-    }
-
-
-    // To Bake a Cake we need a couple steps!
-    public static void bakeCake() {
-        // Preheat the oven to 250°C
-        // Pour Flour
-        // Add Salt
-        // Pour Water
-        // Add Baking Powder
-        // Knead Mixture
-        // Put into the oven for 20 minutes
-        // LOTS OF OTHER STEPS...
-        // We could do it individually, but this becomes hard to read... How about all of those are methods?
-
-        // System.out.println("Preheat the oven to 250°C");
-        // System.out.println("Pour Flour");
-        // System.out.println("Add Salt");
-        // System.out.println("Pour Water");
-        // System.out.println("Add Baking Powder");
-        // We are REPEATING --> Maybe we can make some methods?!
-
-        // Now with methods
-        preheatOven(250);
-        pour("Flour");
-        add("Salt");
-        pour("Water");
-        add("Baking Powder");
-        kneadMixture();
-        putInOvenFor(20);
-        removeFromOven();
-    }
-
-    public static void preheatOven(int degrees) {
-        System.out.println("Preheat the Oven to " + degrees + "°C.");
-    }
-
-    public static void pour(String ingredient) {
-        System.out.println("Pour " + ingredient);
-    }
-
-    public static void add(String ingredient) {
-        System.out.println("Add " + ingredient);
-    }
-
-    public static void kneadMixture() {
-        System.out.println("Knead Mixture");
-    }
-
-    public static void putInOvenFor(int minutes) {
-        System.out.println("Put Mixture into Oven for " + minutes + " minutes.");
-    }
-
-    public static void removeFromOven() {
-        System.out.println("The Mixture has been removed from the oven!");
+    public static void wantToContunue() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Do you want to continue if so type \"y\"");
+        String caculatorContinue = scanner.next();
+        if (caculatorContinue.equals("y")) {
+            while (true) {
+                test();
+            }
+        }
     }
 }
+
+
+
 
