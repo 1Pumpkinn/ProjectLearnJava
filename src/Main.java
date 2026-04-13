@@ -11,15 +11,10 @@ public class Main {
          * Estimated Time: 30-45 minutes
          *
          */
-
-
-        test();
-
-
+        caculate();
     }
 
-
-    public static void test() {
+    public static void caculate() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type in the operation (plus or +, minus or -, multiply or *, divide or /)");
         String operation = scanner.next();
@@ -34,30 +29,33 @@ public class Main {
 
         switch (operation) {
             case "plus", "+":
-                result = number1 + number2; wantToContunue();
+                result = number1 + number2; wantToContinue();
                 break;
             case "minus", "-":
-                result = number1 - number2; wantToContunue();
+                result = number1 - number2; wantToContinue();
                 break;
             case "multiply", "*":
-                result = number1 * number2; wantToContunue();
+                result = number1 * number2; wantToContinue();
                 break;
-            case "divide", "/": wantToContunue();
+            case "divide", "/": wantToContinue();
                 result = number1 / number2; break;
-            default: wantToContunue(); break;
+            default: wantToContinue(); break;
 
         }
         System.out.println("Your result it " + number1 + " " + operation + " " + number2 + " = " + result);
     }
 
-    public static void wantToContunue() {
+    public static void wantToContinue() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Do you want to continue if so type \"y\"");
-        String caculatorContinue = scanner.next();
-        if (caculatorContinue.equals("y")) {
+        String calculatorContinue = scanner.next();
+
+        if (calculatorContinue.equals("y")) {
             while (true) {
-                test();
+                caculate();
             }
+        } else {
+            System.out.println("Calculator Stopped");
         }
     }
 }
