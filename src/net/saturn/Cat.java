@@ -1,23 +1,20 @@
 package net.saturn;
 
-public class Cat {
-    public String picture;
-    public String name;
-    private int age;
-
-    public static int numberOfCats = 0;
-
+public class Cat extends Animal {
     public Cat(String picture, String name, int age) {
-        this.picture = picture;
-        this.name = name;
-        this.age = age;
+        super(picture, name, age);
 
-        numberOfCats++;
     }
-    // Getters
-    public int getAge() {
-        return age;
+
+    @Override
+    public void makeSound() {
+        System.out.println(getName() + " meowed");
     }
+
+    public void scratch() {
+        System.out.println(getName() + " just scratched You.");
+    }
+
+
 
 }
-
