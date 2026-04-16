@@ -2,7 +2,7 @@ package net.saturn;
 
 import javax.xml.namespace.QName;
 
-public class Dog extends Animal{
+public class Dog extends Animal implements Pettable{
     public static int numberOfDogs = 0;
 
     public Dog(String picture, String name, int age) {
@@ -11,6 +11,11 @@ public class Dog extends Animal{
         numberOfDogs++;
     }
 
+    // have to implement every single Abstract class / method or be abstract themselves
+    @Override
+    public void move() {
+        System.out.println("Dog is running!");
+    }
 
     @Override
     public void makeSound() {
@@ -22,4 +27,8 @@ public class Dog extends Animal{
 
     }
 
+    @Override
+    public void pet() {
+        bellyRub();
+    }
 }

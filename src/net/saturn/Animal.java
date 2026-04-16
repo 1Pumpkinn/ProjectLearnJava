@@ -1,6 +1,6 @@
 package net.saturn;
 
-public class Animal {
+public abstract class Animal {
 
     protected String picture;
     private String name;
@@ -16,6 +16,9 @@ public class Animal {
         System.out.println("It is " + name + "'s Birthday");
         age++;
     }
+
+    // Abstract Method
+    public abstract void move();
 
     public void makeSound() {
         System.out.println(name + " made a sound.");
